@@ -11,9 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/users', function () {
+//     return "hi";
+// });
 
+// Route::get('/{id}', function ($id) {
+//     return $id;
+// });
+// Route::get('/{id?}', function ($id=1) {
+//     return $id;
+// });
+// Route::get('/{id}', function ($id) {
+//     return $id;
+// })->where('id','[0-9]');
 
+// Route::get('/{username}', function ($username) {
+//     return $username;
+// })->where('username','[A-Za-z]+');
+
+// Route::get('/{username}', function ($username) {
+//     return $username;
+// })->where('username','[A-Za-z]+');
+
+// Route::get('/members/{id}', 'MembersController@show')->name('members.show');
 
