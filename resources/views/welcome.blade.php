@@ -11,25 +11,6 @@
 
     </head>
     <body>
-       {{--  <a href="<?php echo route('members.show',['id' => 14]) ?>">Test Link</a>  --}}
-{{--
-    route('users.comments.show',[1, 2])
-    http://127.0.0.1:8000/users/UserID/comments/CommentID
-    http://127.0.0.1:8000/users/1/comments/2
 
-
-    route('users.comments.show',['userID' => 1, 'CommentID' => 2])
-    http://127.0.0.1:8000/users/UserID/comments/CommentID
-    http://127.0.0.1:8000/users/1/comments/2
-
-
-    route('users.comments.show',['CommentID' => 2, 'userID' => 1])
-    http://127.0.0.1:8000/users/UserID/comments/CommentID
-    http://127.0.0.1:8000/users/1/comments/2
-
-
-    route('users.comments.show',['userID' => 1, 'CommentID' => 2, 'opt' =>'a'])
-    http://127.0.0.1:8000/users/UserID/comments/CommentID
-    http://127.0.0.1:8000/users/1/comments/2?opt=a  --}}
     </body>
 </html>

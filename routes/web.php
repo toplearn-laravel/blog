@@ -11,30 +11,32 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+// Route::middleware('auth')->group(function () {
+//     Route::get('dashboard', function () {
+//         return view('dashboard');
+//     });
+//     Route::get('account', function () {
+//         return view('account');
+//     });
 // });
-// Route::get('/users', function () {
-//     return "hi";
+
+
+// Route::prefix('dashboard')->group(function () {
+
+//  Route::get('/', function () {
+//         return 'dashboard';
+//     });
+//     Route::get('menu', function () {
+//         return 'dashboard/menu';
+//     });
+
 // });
 
-// Route::get('/{id}', function ($id) {
-//     return $id;
+// Route::group(['prefix' => 'dashboard'], function () {
+//     Route::get('/', function () {
+//                 return 'dashboard';
+//             });
+//         Route::get('menu', function () {
+//                     return 'dashboard/menu';
+//                 });
 // });
-// Route::get('/{id?}', function ($id=1) {
-//     return $id;
-// });
-// Route::get('/{id}', function ($id) {
-//     return $id;
-// })->where('id','[0-9]');
-
-// Route::get('/{username}', function ($username) {
-//     return $username;
-// })->where('username','[A-Za-z]+');
-
-// Route::get('/{username}', function ($username) {
-//     return $username;
-// })->where('username','[A-Za-z]+');
-
-// Route::get('/members/{id}', 'MembersController@show')->name('members.show');
-
