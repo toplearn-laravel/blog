@@ -11,32 +11,42 @@
 |
 */
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('dashboard', function () {
-//         return view('dashboard');
-//     });
-//     Route::get('account', function () {
-//         return view('account');
+
+// Route::domain('test.myapp.com')->group(function (){
+//     Route::get("/" , function(){
+//         return "hi";
 //     });
 // });
 
 
-// Route::prefix('dashboard')->group(function () {
 
-//  Route::get('/', function () {
-//         return 'dashboard';
-//     });
-//     Route::get('menu', function () {
-//         return 'dashboard/menu';
-//     });
 
+// Route::domain('{account}.myapp.com')->group(function () {
+//     Route::get('user/{id}', function ($account, $id) {
+//     });
 // });
 
-// Route::group(['prefix' => 'dashboard'], function () {
-//     Route::get('/', function () {
-//                 return 'dashboard';
-//             });
-//         Route::get('menu', function () {
-//                     return 'dashboard/menu';
-//                 });
-// });;
+
+
+
+// Route::get('/', 'UsersController@index');
+// Route::namespace('Dashboard')->group(function () {
+//  Route::get('dashboard/purchases', 'PurchasesController@index');
+// });
+
+
+// Route::name('admin.')->group(function () {
+//     Route::get('users', function () {
+//     })->name('users');
+// });
+
+// Route::fallback(function(){
+//     return "hi";
+// });
+
+Route::get('/', function(){
+    return view('welcome');
+});
+Route::get('/home', function(){
+    return view('home');
+});
