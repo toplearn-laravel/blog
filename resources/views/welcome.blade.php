@@ -11,8 +11,8 @@
 
     </head>
     <body>
-        <p>
-            hi
-        </p>
+        <?php
+        echo $var;
+        ?>
     </body>
 </html>

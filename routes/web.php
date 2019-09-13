@@ -12,41 +12,9 @@
 */
 
 
-// Route::domain('test.myapp.com')->group(function (){
-//     Route::get("/" , function(){
-//         return "hi";
-//     });
-// });
-
-
-
-
-// Route::domain('{account}.myapp.com')->group(function () {
-//     Route::get('user/{id}', function ($account, $id) {
-//     });
-// });
-
-
-
-
-// Route::get('/', 'UsersController@index');
-// Route::namespace('Dashboard')->group(function () {
-//  Route::get('dashboard/purchases', 'PurchasesController@index');
-// });
-
-
-// Route::name('admin.')->group(function () {
-//     Route::get('users', function () {
-//     })->name('users');
-// });
-
-// Route::fallback(function(){
-//     return "hi";
-// });
-
 Route::get('/', function(){
-    return view('welcome');
-});
-Route::get('/home', function(){
-    return view('home');
+    // return view('welcome')->with('var' , 'test');
+    // return view('welcome',['var'=>'test']);
+    // $var = 'test';
+    return view('welcome', compact('var'));
 });
