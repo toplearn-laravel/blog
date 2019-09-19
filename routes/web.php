@@ -11,10 +11,5 @@
 |
 */
 
+Route::get('/' , 'HomeController@index');
 
-Route::get('/', function(){
-    // return view('welcome')->with('var' , 'test');
-    // return view('welcome',['var'=>'test']);
-    // $var = 'test';
-    return view('welcome', compact('var'));
-});
