@@ -19,7 +19,21 @@
 // Route::put('/category/update/{id}' , 'CategoryController@update');
 // Route::delete('/category/destroy/{id}' , 'CategoryController@destroy');
 
+// Route::apiResource('/category', 'CategoryController');
+
+// Route::get('user/{id}', 'ShowProfile');
 Route::resource('/category', 'CategoryController');
 
+// Route::get('redirect-with-helper' , function(){
+//   return redirect()->to('category/create');
+// });
+//
+// Route::get('redirect-with-helper-shortcut' , function(){
+//   return redirect('category');
+// });
 
+// Route::get('redirect-with-facade' , function(){
+//   return Redirect::to('category');
+// });
 
+Route::redirect('redirect-by-route' , 'category');
