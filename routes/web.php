@@ -28,12 +28,17 @@ Route::resource('/category', 'CategoryController');
 //   return redirect()->to('category/create');
 // });
 //
-// Route::get('redirect-with-helper-shortcut' , function(){
-//   return redirect('category');
+// Route::get('redirect', function()
+// {
+//   return redirect()->route('category.create',['id' => 1]);
 // });
 
-// Route::get('redirect-with-facade' , function(){
-//   return Redirect::to('category');
+// Route::get('redirect', function()
+// {
+//   return redirect()->back();
 // });
 
-Route::redirect('redirect-by-route' , 'category');
+// Route::get('redirect', function()
+// {
+//   return redirect()->action('CategoryController@create');
+// });
