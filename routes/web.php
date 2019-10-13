@@ -11,34 +11,9 @@
 |
 */
 
-// Route::get('/category' , 'CategoryController@index');
-// Route::get('/category/create' , 'CategoryController@create');
-// Route::post('/category' , 'CategoryController@store');
-// Route::get('/category/show/{id}' , 'CategoryController@show');
-// Route::get('/category/edit/{id}' , 'CategoryController@edit');
-// Route::put('/category/update/{id}' , 'CategoryController@update');
-// Route::delete('/category/destroy/{id}' , 'CategoryController@destroy');
 
-// Route::apiResource('/category', 'CategoryController');
-
-// Route::get('user/{id}', 'ShowProfile');
 Route::resource('/category', 'CategoryController');
 
-// Route::get('redirect-with-helper' , function(){
-//   return redirect()->to('category/create');
-// });
-//
-// Route::get('redirect', function()
-// {
-//   return redirect()->route('category.create',['id' => 1]);
-// });
-
-// Route::get('redirect', function()
-// {
-//   return redirect()->back();
-// });
-
-// Route::get('redirect', function()
-// {
-//   return redirect()->action('CategoryController@create');
-// });
+Route::get('/category' , function(){
+  return redirect('category/create')->with('status' , 'Enable');
+});

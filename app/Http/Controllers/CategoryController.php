@@ -23,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return "this is a category.create";
+        return view('admin.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      dd($request->all());
     }
 
     /**
