@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return "this is a category.index";
+        abort(403);
     }
 
     /**

@@ -14,6 +14,10 @@
 
 Route::resource('/category', 'CategoryController');
 
-Route::get('/category' , function(){
-  return redirect('category/create')->with('status' , 'Enable');
+Route::post('something-you-can-not-do' , function(){
+  abort(403, 'Unauthorized.', $headers);
+  abort_unless(Auth::user()->isAdmin(), 403);
+  abort_if(Auth::user()->isBanned(), 403);
 });
+
+
