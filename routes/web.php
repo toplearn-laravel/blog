@@ -11,13 +11,26 @@
 |
 */
 
+// Route::get('/' , function(){
+//   return response('hello world' , 404)->header('Content-Type' , 'text/plain');
+// });
 
-Route::resource('/category', 'CategoryController');
-
-Route::post('something-you-can-not-do' , function(){
-  abort(403, 'Unauthorized.', $headers);
-  abort_unless(Auth::user()->isAdmin(), 403);
-  abort_if(Auth::user()->isBanned(), 403);
-});
+// Route::get('/' , function(){
+//   return response('hello world' , 404)->header('Content-Type' , 'text/plain')->cookie('name' , 'value' , $minutes);
+// });
 
 
+// Route::get('/' , function(){
+//   return response()->json([
+//     'age' => 20 ,
+//     'status' => 'enable'
+//   ]);
+// });
+
+// Route::get('/' , function(){
+// return response()->download($pathToFile , $name , $headers)->deleteFileAfterSend();
+// });
+
+// Route::get('/' , function(){
+// return response()->file($pathToFile, $headers);
+// });
