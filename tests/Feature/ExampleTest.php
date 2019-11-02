@@ -14,8 +14,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        // assertSee($text);
+        // $this->browser(function (Browser $browser){
+        //   $browser->visit('/system/login')->assertSee('forget password');
+        // });
 
-        $response->assertStatus(200);
     }
-}
+  }
