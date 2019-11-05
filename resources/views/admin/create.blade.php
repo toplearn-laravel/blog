@@ -11,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+{{ '<b>hi</b>' }}
 
   <form class="" action="{{ route('category.store') }}" method="post">
     @csrf

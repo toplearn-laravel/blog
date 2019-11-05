@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/' , function(){
-  return "hi";
-});
+Route::resource('/category' , 'CategoryController');
