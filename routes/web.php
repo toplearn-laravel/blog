@@ -11,4 +11,4 @@
 |
 */
 
-Route::resource('/category' , 'CategoryController');
+Route::get('/' , 'HomeController@index');
