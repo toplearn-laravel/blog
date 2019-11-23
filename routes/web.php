@@ -12,3 +12,7 @@
 */
 
 Route::get('/' , 'HomeController@index');
+
+// Route::get('blade' , function(){
+//   return view('child');
+// });
