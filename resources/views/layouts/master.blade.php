@@ -18,6 +18,7 @@
   <body>
     <div class="container">
       @yield('content')
+      {{ $count }}
     </div>
     @section('script')
       <script type="text/javascript" src="app.js"></script>
