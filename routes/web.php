@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,8 @@
 
 Route::get('/' , 'HomeController@index');
 
-// Route::get('blade' , function(){
-//   return view('child');
+
+// Route::get('/' , function(App\Car $car){
+//     return view('welcome' , compact('car'));
 // });
+

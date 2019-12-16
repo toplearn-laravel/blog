@@ -4,21 +4,11 @@
 
 @section('content')
 
+@inject('car', 'App\Car')
 
-@component('layouts.button')
-@slot('color')
-primary
-@endslot
-@slot('text')
-ورود
-@endslot
-some text
-@endcomponent
-
+{{ $car->count() }}
 
 @endsection
 @section('script')
-{{-- <script type="text/javascript" src="test.js">
-    var app = @json($array);
-  </script> --}}
+
 @endsection
