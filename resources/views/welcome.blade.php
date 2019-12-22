@@ -4,9 +4,26 @@
 
 @section('content')
 
-@inject('car', 'App\Car')
 
-{{ $car->count() }}
+{{-- @ifGuest --}}
+
+{{-- @env('local')
+
+@elseenv('testing')
+
+@else
+
+  @endenv
+
+  @unlessenv ('local')
+
+  @endunlessenv --}}
+
+
+
+
+
+
 
 @endsection
 @section('script')

@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 
     /**
@@ -24,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // View::share('count', 5);
+      Blade::directive('ifGuest', function (){
+        return "<?php if (auth()->guest()); ?>";
+      });
+      Blade::if('env', function ($env){
+        return app()->environment($env);
+      });
     }
 }

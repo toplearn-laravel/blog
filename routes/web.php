@@ -13,9 +13,3 @@
 */
 
 Route::get('/' , 'HomeController@index');
-
-
-// Route::get('/' , function(App\Car $car){
-//     return view('welcome' , compact('car'));
-// });
-
