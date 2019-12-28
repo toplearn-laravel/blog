@@ -4,26 +4,13 @@
 
 @section('content')
 
+@push('css')
+<link rel="stylesheet" href="extra.css">
+@endpush
 
-{{-- @ifGuest --}}
-
-{{-- @env('local')
-
-@elseenv('testing')
-
-@else
-
-  @endenv
-
-  @unlessenv ('local')
-
-  @endunlessenv --}}
-
-
-
-
-
-
+@prepend('css')
+<link rel="stylesheet" href="Firstextra.css">
+@endprepend
 
 @endsection
 @section('script')

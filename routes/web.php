@@ -13,3 +13,4 @@
 */
 
 Route::get('/' , 'HomeController@index');
+Route::get('/test' , 'HomeController@index1');
