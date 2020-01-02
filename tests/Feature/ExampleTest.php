@@ -12,12 +12,18 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testPushAndPop()
     {
-        // assertSee($text);
-        // $this->browser(function (Browser $browser){
-        //   $browser->visit('/system/login')->assertSee('forget password');
-        // });
+        // $users = [];
+        // $this->assertSame(0, count($users));
+
+        // array_push($users, 'hassan');
+        // $this->assertSame('hassan', $users[count($users) - 1]);
+        // $this->assertSame(1, count($users));
+
+        // $this->assertSame('karim', array_pop($users));
+        // $this->assertSame(0, count($users));
+
 
     }
   }
