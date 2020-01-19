@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class AddImagesToArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('body');
-            $table->text('image');
-            $table->string('description', 255);
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            $table->text('image')->after('description');
         });
     }
 
@@ -26,9 +22,11 @@ class CreateUsersTable extends Migration
      * Reverse the migrations.
      *
      * @return void
-     */
+     */x
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table('articles', function (Blueprint $table) {
+            //
+        });
     }
 }
