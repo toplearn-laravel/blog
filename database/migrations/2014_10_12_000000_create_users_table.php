@@ -17,8 +17,19 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->text('body');
             $table->text('avatar');
+            // $table->string('email')->unique();
+            // $table->unique('email');
+            // $table->index('state');
+            // $table->primary('id');
+            // $table->renameIndex('state', 'sth');
+            // $table->dropPrimary(sth');
             $table->string('info', 255);
             $table->timestamps();
+
+
+
+            // $table->dropPrimary('state', 'sth');
+
         });
     }
 
