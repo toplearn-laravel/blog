@@ -15,9 +15,11 @@ class UsersTableSeeder extends Seeder
     {
         for ($i=0;$i<10;$i++) {
             DB::table('users')->insert([
-            'body' => Str::random(5),
-            'image' => Str::random(10),
-            // 'email' => Str::random(10).'@gmail.com',
+            'name' => Str::random(5),
+            'email' => Str::random(10).'@gmail.com',
+            'password' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         }
     }
