@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
 use App\Post;
-use DB;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
 {
     public function index()
     {
-      // $users = DB::select('select * from users where id = ?', [$id]);
-      // $users = DB::select('select * from users where id = :id', ['id' => 2]);
-      // $users = DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['hassan', 'hassan@yahoo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi']);
-      // $users = DB::update('update users set name = ? where id = ?', ['ali', 65]);
-      // $users = DB::delete('delete from users where id = ?', [65]);
+        $test = collect(['hassan', 'ali', 'hossein']);
+    //    $users = DB::table('users')->select('email')->get();
+    //    $users = DB::table('users')->where('email', 'hormoz56@example.net')->where('name', 'آرام کاشی')->get();
+    //    $users = DB::table('users')->where([
+    //        ['email', 'hormoz56@example.net'],
+    //        ['name', 'آرام کاشی'],
+    //    ])->get();
+    //    $users = DB::table('users')->where('email', 'hormoz56@example.net')->orWhere('name', 'آمنه منوچهری')->get();
+
+       dd($test);
         return view('welcome');
     }
 }
