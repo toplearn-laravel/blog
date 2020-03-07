@@ -13,18 +13,23 @@ class HomeController extends Controller
     public function index()
     {
 
+      // $result = false;
+      //
+      // $users = DB::table('users')->when($result, function($query){
+      //   return $query->where('id', 1);
+      // })->get();
 
-        // $users = DB::table('posts')->join('users', 'users.id', 'posts.user_id')->get();
-        // $first =  DB::table('users')->whereNull('updated_at');
+      // $users = DB::table('password_resets')->first();
 
-        // $users = DB::table('users')->orderBy('id', 'asc')->get();
-        // $users = DB::table('users')->latest()->first();
-        // $users = DB::table('users')->inRandomOrder()->first();
-        // $users = DB::table('users')->take(5)->get();
-        // $users = DB::table('users')->skip(10)->take(5)->get();
-        // $users = DB::table('users')->offset(10)->limit(5)->get();
+      // $users = DB::table('users')->first()->id;
 
-        // $users = DB::table('posts')->groupBy('user_id')->select('user_id', DB::raw('count(*) as total'))->get();
+      // $users = DB::table('users')->where('id', 1)->orWhere('id', 2)->count();
+
+
+      // $users = DB::table('users')->max('id');
+
+
+      // $users = DB::table('users')->avg('id');
 
        dd($users);
         return view('welcome');
