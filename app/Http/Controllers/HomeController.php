@@ -13,25 +13,27 @@ class HomeController extends Controller
     public function index()
     {
 
-      // $result = false;
-      //
-      // $users = DB::table('users')->when($result, function($query){
-      //   return $query->where('id', 1);
-      // })->get();
+    // DB::table('users')->insert([
+    //   ['name' => 'karim', 'email' => 'karim@gmail.com'],
+    //   ['name' => 'hassan', 'email' => 'hassan2@gmail.com'],
+    //   ]);
 
-      // $users = DB::table('password_resets')->first();
+        // $id = DB::table('users')->insertGetId([
+        //     'name' => 'kaarim', 'email' => 'kaarim@gmail.com'
+        // ]);
 
-      // $users = DB::table('users')->first()->id;
-
-      // $users = DB::table('users')->where('id', 1)->orWhere('id', 2)->count();
-
-
-      // $users = DB::table('users')->max('id');
+        // DB::table('users')->where('id', 1)->update(['name' => 'hassan']);
 
 
-      // $users = DB::table('users')->avg('id');
+        DB::table('users')->updateOrInsert(
+          ['email' => 'hassan2@gmail.com', 'name' => 'hassan2'],
+          ['password' => 'password']
+        );
 
-       dd($users);
+
+
+
+       // dd($id);
         return view('welcome');
     }
 }
