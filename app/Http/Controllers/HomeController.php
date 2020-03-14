@@ -12,28 +12,32 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-    // DB::table('users')->insert([
-    //   ['name' => 'karim', 'email' => 'karim@gmail.com'],
-    //   ['name' => 'hassan', 'email' => 'hassan2@gmail.com'],
-    //   ]);
-
-        // $id = DB::table('users')->insertGetId([
-        //     'name' => 'kaarim', 'email' => 'kaarim@gmail.com'
-        // ]);
-
-        // DB::table('users')->where('id', 1)->update(['name' => 'hassan']);
+        // DB::table('users')->where('id', 1)->increment('age');
+        // DB::table('users')->where('id', 1)->decrement('age', 5);
+        // DB::table('users')->where('id', 1)->delete();
 
 
-        DB::table('users')->updateOrInsert(
-          ['email' => 'hassan2@gmail.com', 'name' => 'hassan2'],
-          ['password' => 'password']
-        );
+        // DB::transaction(function () {
+            // DB::table('users')->where('id', 2)->update(['name' => 'hossein']);
+            // DB::table('usesssrs')->where('id', 3)->update(['name' => 'karim']);
+        // });
+
+        // try{
+        //     DB::beginTransaction();
+        //     DB::table('users')->where('id', 2)->update(['name' => 'hossein']);
+        //     DB::table('users')->where('id', 3)->update(['name' => 'karim']);
+        //     DB::commit();
+        // }
+        // catch(\Exception $e){
+        //     echo $e;
+        //     DB::rollBack();
+        // }
 
 
 
 
-       // dd($id);
+
+
         return view('welcome');
     }
 }
