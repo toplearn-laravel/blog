@@ -12,32 +12,16 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // DB::table('users')->where('id', 1)->increment('age');
-        // DB::table('users')->where('id', 1)->decrement('age', 5);
-        // DB::table('users')->where('id', 1)->delete();
-
-
-        // DB::transaction(function () {
-            // DB::table('users')->where('id', 2)->update(['name' => 'hossein']);
-            // DB::table('usesssrs')->where('id', 3)->update(['name' => 'karim']);
-        // });
-
-        // try{
-        //     DB::beginTransaction();
-        //     DB::table('users')->where('id', 2)->update(['name' => 'hossein']);
-        //     DB::table('users')->where('id', 3)->update(['name' => 'karim']);
-        //     DB::commit();
-        // }
-        // catch(\Exception $e){
-        //     echo $e;
-        //     DB::rollBack();
-        // }
-
-
-
-
-
-
+        $user = User::find(2);
+        dd($user);
         return view('welcome');
+    }
+
+
+
+    public function showUser(User $user){
+
+        dd($user);
+
     }
 }

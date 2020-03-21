@@ -13,3 +13,6 @@
 */
 
 Route::get('/' , 'HomeController@index');
+// Route::get('/show-user/{id}' , 'HomeController@showUser');
+// Route::get('/show-user/{user}' , 'HomeController@showUser');
+Route::get('/show-user/{name}' , 'HomeController@showUser');
