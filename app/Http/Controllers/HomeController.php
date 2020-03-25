@@ -12,16 +12,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = User::find(2);
-        dd($user);
-        return view('welcome');
+        $users = User::all();
+        return view('welcome', compact('users'));
     }
 
-
-
-    public function showUser(User $user){
-
-        dd($user);
-
-    }
 }

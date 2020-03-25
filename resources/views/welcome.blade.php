@@ -4,13 +4,15 @@
 
 @section('content')
 
-@push('css')
-<link rel="stylesheet" href="extra.css">
-@endpush
 
-@prepend('css')
-<link rel="stylesheet" href="Firstextra.css">
-@endprepend
+
+@foreach ($users as $user)
+<p>
+  {{ $user->email }}
+</p>
+@endforeach
+
+
 
 @endsection
 @section('script')
