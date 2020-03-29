@@ -4,16 +4,9 @@
 
 @section('content')
 
-
-
-@foreach ($users as $user)
 <p>
-  {{ $user->email }}
+    {{ $user->email }}
 </p>
-@endforeach
-
-
-
 @endsection
 @section('script')
 
