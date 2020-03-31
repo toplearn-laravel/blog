@@ -15,39 +15,33 @@ class HomeController extends Controller
     public function index()
     {
 
-        // $user = User::where('id', 4)->get()->first();
-        // $users = User::orderBy('id', 'asc')->take(10)->get();
+    //    $post = new Post;
+    //    $post->title = 'salam in title ast';
+    //    $post->user_id = 15;
+    //    $post->save();
 
-        // $user = User::where('id', 4)->get()->first();
-
-        // $freshUser = $user->fresh();
-
-        //  $user = User::where('id', 3)->get()->first();
-
-        //  $user->name = 'nima';
-
-        // $user->refresh();
-
-        // $users = User::find([
-        //     3,4,5
+        // $post = new Post([
+        //    'title' => 'salam in title ast',
+        //   'user_id' => 20,
         // ]);
-    //         try{
-    //               $user = User::findOrfail(1);
-    //         }
-    //         catch(\Illuminate\Database\Eloquent\ModelNotFoundException $e){
-
-    //             return response()->json('رکورد  موردنظر پیدا نشد', 500, [], JSON_UNESCAPED_UNICODE);
-
-    //         }
-    //     return view('welcome', compact('user'));
-    // }
+        // $post->save();
 
 
-    // User::chunk(40, function($users){
-    //     foreach($users as $user){
-    //         dd($users);
-    //     }
-    // });
+        // $post = Post::make([
+        //    'title' => 'salam in title ast',
+        //   'user_id' => 20,
+        // ]);
+        // $post->save();
+
+            // $post = Post::create([
+            //  'title' => 'salam in title ast',
+            //   'user_id' => 22,
+            //  ]);
+
+         return 'ho';
+
+
+        return view('welcome');
 
 
         }

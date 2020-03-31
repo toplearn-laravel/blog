@@ -4,9 +4,6 @@
 
 @section('content')
 
-<p>
-    {{ $user->email }}
-</p>
 @endsection
 @section('script')
 
