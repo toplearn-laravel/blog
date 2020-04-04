@@ -15,30 +15,24 @@ class HomeController extends Controller
     public function index()
     {
 
-    //    $post = new Post;
-    //    $post->title = 'salam in title ast';
-    //    $post->user_id = 15;
+    //    $post = Post::find(102);
+    //    $post->title = 'updated title';
     //    $post->save();
 
-        // $post = new Post([
-        //    'title' => 'salam in title ast',
-        //   'user_id' => 20,
-        // ]);
-        // $post->save();
+    // Post::where('id', 102)->update([
+    //     'title' => 'second updated title'
+    // ]);
 
+        //  $post = Post::find(102);
+        //  $post->update([
+        //         'title' => 'third updated title'
+        //     ]);
 
-        // $post = Post::make([
-        //    'title' => 'salam in title ast',
-        //   'user_id' => 20,
-        // ]);
-        // $post->save();
+        // $post = Post::where('created_at', '<',  now())->count();
+        // $post = Post::where('created_at', '<',  now())->avg('id');
 
-            // $post = Post::create([
-            //  'title' => 'salam in title ast',
-            //   'user_id' => 22,
-            //  ]);
+        // dd($post);
 
-         return 'ho';
 
 
         return view('welcome');
