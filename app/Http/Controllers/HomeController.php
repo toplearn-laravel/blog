@@ -15,25 +15,29 @@ class HomeController extends Controller
     public function index()
     {
 
-    //    $post = Post::find(102);
-    //    $post->title = 'updated title';
-    //    $post->save();
-
-    // Post::where('id', 102)->update([
-    //     'title' => 'second updated title'
-    // ]);
-
-        //  $post = Post::find(102);
-        //  $post->update([
-        //         'title' => 'third updated title'
-        //     ]);
-
-        // $post = Post::where('created_at', '<',  now())->count();
-        // $post = Post::where('created_at', '<',  now())->avg('id');
+        // $post = Post::firstOrCreate(
+        //     ['title' => 'fifth updated title2',]
+        // );
 
         // dd($post);
 
 
+        // $post = Post::find(105);
+        // $post->delete();
+
+
+        // $post = Post::find(105);
+        // $post->delete();
+
+
+        // Post::destroy([102,100]);
+
+        // Post::where('user_id', 34)->delete();
+        // $posts = Post::withTrashed()->get();
+        // $posts = Post::onlyTrashed()->restore();
+        // $posts = Post::onlyTrashed()->forceDelete();
+
+        // dd($posts);
 
         return view('welcome');
 
