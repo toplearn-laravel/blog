@@ -11,7 +11,8 @@ class Post extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
+    // protected $fillable = ['title', 'user_id'];
 
 
 
