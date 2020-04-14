@@ -15,10 +15,11 @@ class HomeController extends Controller
     public function index()
     {
 
-
-        // Post::create(['title' => 'Flight 10', 'user_id' => 12]);
-
-        return view('welcome');
+      //
+      // $posts = Post::active(1)->get();
+      // dd($posts);
+      //
+      //   return view('welcome');
 
 
         }

@@ -11,9 +11,13 @@ class Post extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
-    // protected $guarded = ['id'];
-    // protected $fillable = ['title', 'user_id'];
+    protected $guarded = ['id'];
 
+    public function scopeActive($query, $status){
+
+      return $query->where('status', $status);
+
+    }
 
 
 }
