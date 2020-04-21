@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Scopes\StatusScope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -13,11 +15,22 @@ class Post extends Model
 
     protected $guarded = ['id'];
 
-    public function scopeActive($query, $status){
 
-      return $query->where('status', $status);
+    // protected static function boot(){
 
-    }
+    //     parent::boot();
+    //     static::addGlobalScope(new StatusScope);
+
+    // }
+
+        // protected static function boot(){
+
+        //     parent::boot();
+        //     static::addGlobalScope('status', function(Builder $builder){
+        //         $builder->where('status', 1);
+        //     });
+
+        // }
 
 
 }

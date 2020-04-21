@@ -15,11 +15,11 @@ class HomeController extends Controller
     public function index()
     {
 
-      //
-      // $posts = Post::active(1)->get();
-      // dd($posts);
-      //
-      //   return view('welcome');
+
+      $posts = Post::all();
+      dd($posts);
+
+        return view('welcome');
 
 
         }
