@@ -16,8 +16,10 @@ class HomeController extends Controller
     {
 
 
-      $posts = Post::all();
-      dd($posts);
+        $user = new User;
+        $user->first_name = 'HASSAN';
+        $user->password = '12345678';
+        $user->save();
 
         return view('welcome');
 
