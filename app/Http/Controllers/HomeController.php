@@ -15,11 +15,18 @@ class HomeController extends Controller
     public function index()
     {
 
+        // $post = new Post;
+        // $post->user_id = 12;
+        // $post->title = 'salam2';
+        // $post->status = '1';
+        // $post->save();
 
-        $user = new User;
-        $user->first_name = 'HASSAN';
-        $user->password = '12345678';
-        $user->save();
+        $post = Post::all();
+        // dd($post);
+        // dd($post->toArray());
+        // dd($post->toJson());
+
+
 
         return view('welcome');
 

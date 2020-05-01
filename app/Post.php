@@ -16,21 +16,11 @@ class Post extends Model
     protected $guarded = ['id'];
 
 
-    // protected static function boot(){
+    // protected $casts = [
 
-    //     parent::boot();
-    //     static::addGlobalScope(new StatusScope);
+    //     'status' => 'string'
 
-    // }
-
-        // protected static function boot(){
-
-        //     parent::boot();
-        //     static::addGlobalScope('status', function(Builder $builder){
-        //         $builder->where('status', 1);
-        //     });
-
-        // }
+    // ];
 
 
 }
