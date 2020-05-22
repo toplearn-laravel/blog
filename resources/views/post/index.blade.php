@@ -38,9 +38,11 @@
             <td>{{ $post['user_id'] }}</td>
             <td>{{ $post['started_at'] }}</td>
             <td style="width: 300px">
-                <form action="" method="POST">
+                <form action="{{ route('post.destroy', $post->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('post.show', $post->id) }}">نمایش</a>
                     <a class="btn btn-primary" href="{{ route('post.edit', $post->id) }}">ویرایش</a>
+                    @csrf
+                    @method('DELETE')
                     <button type="submit" class="btn btn-danger">حذف</button>
                 </form>
             </td>
