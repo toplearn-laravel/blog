@@ -12,8 +12,7 @@
 |
 */
 
-// Route::get('/' , 'HomeController@index');
+Route::get('/' , 'HomeController@index');
 
 
-Route::resource('post', 'PostController');
 

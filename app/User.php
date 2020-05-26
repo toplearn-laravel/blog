@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
 
-
+    public function address(){
+        return $this->hasOne('App\Address');
+    }
 
 }
