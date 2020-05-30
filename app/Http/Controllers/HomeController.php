@@ -17,17 +17,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        // $comment = Comment::find(1);
-        // $post = Post::find(122);
-        // $post = Post::has('comments')->get();
-        // $comment = Comment::find(4);
-        // $comment->post()->associate(Post::first());
-        // $comment->save();
-        // $comment = Comment::find(4);
-        // $comment->post()->dissociate();
-        // $comment->save();
-        // $post = Post::find(122);
-        // dd($post->comments()->where('id', 2)->get());
+      $user = User::find(57);
+      dd($user->info);
 
         return view('welcome');
 
