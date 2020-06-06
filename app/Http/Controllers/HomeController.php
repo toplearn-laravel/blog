@@ -6,6 +6,7 @@ use App\Post;
 use App\User;
 use App\Address;
 use App\Comment;
+use App\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,8 +18,8 @@ class HomeController extends Controller
     public function index()
     {
 
-      $user = User::find(57);
-      dd($user->info);
+       $coutnry = Country::find(2);
+       dd($coutnry->posts);
 
         return view('welcome');
 
