@@ -18,9 +18,8 @@ class HomeController extends Controller
     public function index()
     {
 
-       $coutnry = Country::find(2);
-       dd($coutnry->posts);
 
+        posts->tags
         return view('welcome');
 
 
