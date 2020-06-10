@@ -9,6 +9,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
 
+  public function image(){
+
+    return $this->morphOne('App\Image', 'imageable');
+
+  }
+
     public function address(){
         return $this->hasOne('App\Address');
     }
