@@ -9,6 +9,7 @@ use App\Comment;
 use App\Country;
 use App\Image;
 use App\Tag;
+use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,14 +21,12 @@ class HomeController extends Controller
     public function index()
     {
 
-
-    // $post = Post::find(124);
-    // dd($post->image);
-    // $user = User::find(124);
-    // dd($user->image);
-    // $image = Image::find(2);
-    // dd($image->imageable->name);
-
+        // $post = Post::find(122);
+        // dd($post->comments);
+        // $video = Video::find(1);
+        // dd($video->comments);
+        // $comment = Comment::find(1);
+        // dd($comment->commentable);
 
 
         }
