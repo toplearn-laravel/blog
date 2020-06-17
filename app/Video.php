@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    public function comments(){
+    public function tags(){
 
-        return $this->morphMany('App\Comment', 'commentable');
 
-      }
+        return $this->morphToMany('App\Tag', 'taggable');
+
+
+    }
+
 }
