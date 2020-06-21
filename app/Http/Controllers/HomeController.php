@@ -21,20 +21,48 @@ class HomeController extends Controller
     public function index()
     {
 
-        // $post = Post::find(122);
+    //    $posts = Post::all(); Select * from posts
 
-        // $comment = new Comment;
-        // $comment->body = 'bah bah';
-        // $post->comments()->save($comment);
+    //    foreach($posts as $post){
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 2
+    //        $post->comments; Select * from comments where post_id = 3
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //        $post->comments; Select * from comments where post_id = 1
+    //    }
+
+            // $posts = Post::with('comments')->get();
+                        // dd($posts[19]->comments);
+            // $posts = Post::with(['comments', 'author'])->get();
+            // $posts = Post::withCount(['comments'])->get();
+            //                         dd($posts[19]);
+            // $posts = Post::with(['comments', 'comment.user'])->get();
+            $posts = Post::with('comments:body')->get();
+        //     $posts = Post::with(['comments' => function ($query){
+        //         $query->where('id', 2);
+        //     }])->get();
+        //    dd($posts[19]->comments);
+
+        // select * from posts;
+        // select * from comments where post_id IN (1,2,3,4,5, ...)
 
 
-        // $post = Post::find(122);
-        // dd($post->tags);
-        // $video = Video::find(1);
-        // dd($video->tags);
+            // $posts = Post::all();
 
-        // $tag = Tag::find(1);
-        // dd($tag->posts);
+            // if ($someCondition){
+            //     $posts->load('comments');
+            // }
+            // $post = Post::find(122);
+            // $post->loadMissing('comments');
+            // dd($post);
+
 
         }
 }
