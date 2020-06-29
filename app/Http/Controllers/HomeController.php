@@ -21,9 +21,22 @@ class HomeController extends Controller
     public function index()
     {
 
+        // $messages = [
+        //     'errors' => [
+        //         'somthing went wrong',
+        //     ],
+        //     'messages' => [
+        //         'create seccefully'
+        //     ],
+        // ];
+
+        // $messagebag = new \Illuminate\Support\MessageBag($messages);
+
+        // $error = new \Illuminate\Support\MessageBag();
+        // $error->add('error', 'somthing went wrong');
 
 
-        return view('welcome');
+        return view('welcome')->withErrors(['error' => 'somthing went wrong']);
 
 
         }

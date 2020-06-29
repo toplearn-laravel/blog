@@ -4,9 +4,7 @@
 
 @section('content')
 
-<button class="btn btn-danger">
-      click
-</button>
+    @include('layouts.partials.error')
 
 @endsection
 @section('script')
