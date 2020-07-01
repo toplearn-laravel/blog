@@ -4,8 +4,6 @@
 
 @section('content')
 
-    @include('layouts.partials.error')
-
 @endsection
 @section('script')
 
