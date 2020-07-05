@@ -14,16 +14,6 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        // dd($request->path());
-        // dd($request->is('post/*'));
-        // dd($request->url());
-        // dd($request->fullUrl());
-
-        // dd($request->method());
-        // dd($request->isMethod('get'));
-
-
-
 
         $posts = Post::all();
       return view('post.index', compact('posts'));
@@ -48,17 +38,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         // dd($request->all());
-        // dd($request->input('name', 'hassan'));
-        // dd($request->title);
-        // dd($request->only('title'));
-        // dd($request->except('_token'));
-        // dd($request->has('title'));
-        // dd($request->filled('title'));
-
-        // dd($request->input('employees.0.firstName'));
+        // dd($request->file('image'));
+        // dd($request->hasFile('image'));
+        // dd($request->file('image')->getMimeType());
 
 
+        $fileName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('uploads'), $fileName);
 
     Post::create($request->all());
     return redirect()->route('post.index')->with('success', 'record created successfully');

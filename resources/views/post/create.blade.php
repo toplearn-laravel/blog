@@ -13,7 +13,7 @@
 </div>
 
 
-<form action="{{ route('post.store') }}" method="POST">
+<form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
 @csrf
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -26,11 +26,9 @@
             <div class="form-group">
                 <strong>نویسنده:</strong>
                 <input type="number" name="user_id" class="form-control" placeholder="">
-
-                <input type="text" name="employees[0][firstName]" class="form-control" placeholder="">
-                <input type="text" name="employees[0][lastName]" class="form-control" placeholder="">
-                <input type="text" name="employees[1][firstName]" class="form-control" placeholder="">
-                <input type="text" name="employees[1][lastName]" class="form-control" placeholder="">
+            </div>
+            <div class="col-md-6">
+                <input type="file" name="image" class="form-control mb-3">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
