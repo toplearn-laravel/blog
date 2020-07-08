@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -39,17 +40,18 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request->all());
-        // dd($request->file('image'));
-        // dd($request->hasFile('image'));
-        // dd($request->file('image')->getMimeType());
+            Validator::make($request->all(),[
+               'title' => 'required|min:5',
+               'user' => 'required',
+           ])->validate();
+
+        //    if($validator->fails()){
+        //        return redirect()->back()->withErrors($validator);
+        //    }
 
 
-        $fileName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('uploads'), $fileName);
-
-    Post::create($request->all());
-    return redirect()->route('post.index')->with('success', 'record created successfully');
+            Post::create($request->all());
+            return redirect()->route('post.index')->with('success', 'record created successfully');
     }
 
     /**
