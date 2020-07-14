@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Rules\Uppercase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -40,14 +41,29 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-            Validator::make($request->all(),[
-               'title' => 'required|min:5',
-               'user' => 'required',
-           ])->validate();
+            // Validator::make($request->all(),[
+            //    'title' => 'required|min:5',
+            //    'user_id' => 'required',
+            // ],[
+            //     'title.required' => 'بخش عنوان پست اجباری میباشد.',
+            // ])->validate();
 
-        //    if($validator->fails()){
-        //        return redirect()->back()->withErrors($validator);
-        //    }
+            // $request->validate([
+            //     'title' => 'required|min:6',
+            //     'user_id' => 'required',
+            // ]);
+
+            // $request->validate([
+            //     'title' => ['required', new Uppercase]
+            // ]);
+
+            // $request->validate([
+            //     'title' => 'required|min:6',
+            //     'book.id' => 'required',
+            //     'book.name' => 'required',
+            //   ]);
+
+
 
 
             Post::create($request->all());
