@@ -24,7 +24,8 @@ class StorePost extends FormRequest
     public function rules()
     {
         return [
-           'title' => 'required|min:5'
+           'title' => 'required',
+           'user_id' => 'required'
         ];
     }
 }

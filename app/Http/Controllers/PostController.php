@@ -41,9 +41,6 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-        dd('hi');
-            $validated = $request->validated();
-            dd($validated);
 
             Post::create($request->all());
             return redirect()->route('post.index')->with('success', 'record created successfully');
