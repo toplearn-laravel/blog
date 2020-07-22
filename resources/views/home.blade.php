@@ -14,6 +14,20 @@
                         </div>
                     @endif
 
+
+                        {{--  @auth
+
+
+
+                        @endauth
+
+                        @guest
+
+                        @endguest  --}}
+
+                        {{--  {{ dd(auth()->user()) }}  --}}
+                        {{--  {{ dd(\Auth::user()) }}  --}}
+
                     You are logged in!
                 </div>
             </div>
