@@ -16,6 +16,11 @@ class CheckAge
     public function handle($request, Closure $next)
     {
 
-        return $next($request);
+        // if(auth()->user()->isAdmin == 1){
+        //     return $next($request);
+        // }
+
+        // return redirect('home');
+
     }
 }
