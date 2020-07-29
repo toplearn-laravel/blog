@@ -12,19 +12,13 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/' , 'HomeController@index');
-
-// Route::get('/test' , 'HomeController@test')->middleware('age');
-
-// Route::prefix('admin')->middleware('age')->group(function () {
-
-// });
-
 
 
 Route::resource('post', 'PostController');
 
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
