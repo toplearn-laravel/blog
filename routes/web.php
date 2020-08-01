@@ -17,6 +17,7 @@ Auth::routes();
 Route::get('/' , 'HomeController@index');
 
 
+// Route::resource('post', 'PostController')->middleware('auth.basic');
 Route::resource('post', 'PostController');
 
 
