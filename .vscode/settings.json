@@ -1,3 +1,9 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.ignoreWords": [
+        "id",
+        "login",
+        "login using id",
+        "using"
+    ]
 }

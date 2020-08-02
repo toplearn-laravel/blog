@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -16,7 +17,23 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        // if (auth()->attempt([
+        //     'email' => 'hassankhosrojerdi@yahoo.com',
+        //     'password' => 123456789
+        // ])){
+        //     return 'yes';
+        // }
+
+        // auth()->loginUsingId(5);
+        // $user = User::find(5);
+        // auth()->login($user);
+        // auth()->once([
+        //     'email' => 'hassankhosrojerdi@yahoo.com',
+        //     'password' => 123456789,
+        // ]);
+        // auth()->onceUsingId(577);
+        // auth()->logoutOtherDevices(123456789);
+        $this->middleware('auth');
     }
 
     /**
@@ -27,18 +44,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        // dd(Hash::make('test'));
+        // auth()->logout();
 
-        // dd(
-        // Hash::check('test', '$2y$10$7rJ6XNP0tlLZQwujmIKreuipTvuUwLxOrRP.NnDcbcFFbm3BGFwti'
-        // ));
-
-
-        // dd(encrypt('test'));
-        // dd(decrypt('eyJpdiI6InhoRDFNQmRDMkI3cTIzUGNiQ2JvRWc9PSIsInZhbHVlIjoiWkVKNm96SG9WOGtuT0Fub0NjejNZUT09IiwibWFjIjoiNzkwZDdhM2FjMDZmNjhhYjRiYTc0YTY3YjAyYmViMWViZDk4M2VkN2FlODg5YmU4NzNiNTljN2Q4MzU3YzAzNSJ9'));
-
-        // dd(Crypt::encryptString('test'));
-        // dd(Crypt::decryptString('eyJpdiI6IkNNdTBoYTdxY1wvYlwvRVwvRVJINnRzSHc9PSIsInZhbHVlIjoickpQSXBBTUpXZlwvWEJPRVA4dzJ2SlE9PSIsIm1hYyI6IjA1NmZlOTFiZDY5MWQ1ZTQwODZlOGU1MWQzOGE3Y2NkYzYxYWNmZWMwOGQ1NzBiMGQ4MzUzMzkxM2UzYjM3NTQifQ=='));
 
 
         return view('home');
