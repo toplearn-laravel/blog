@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/' , 'HomeController@index');
+Route::get('/admin' , 'AdminController@index')->middleware('auth', 'admin');
 
 
 // Route::resource('post', 'PostController')->middleware('auth.basic');
