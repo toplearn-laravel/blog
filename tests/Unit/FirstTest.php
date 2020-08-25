@@ -6,6 +6,7 @@ use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Hash;
 
 class firstTest extends TestCase
 {
@@ -17,34 +18,42 @@ class firstTest extends TestCase
 
 
 
-     public function test_it_creates_a_new_post(){
 
-    //     $user = factory(User::class)->create();
-    //     $this->be($user);
-    //     $this->post(route('post.store'),
-    //     [
-    //         'title' => 'test100000',
-    //         'user_id' => 200,
-    //     ]);
 
-    //     $this->assertDatabaseHas('posts',[
-    //         'title' => 'test100000',
-    //         'user_id' => 200,
-    //     ]);
-    //  }
+        // public function test_users_can_register(){
+        //     $this->post(route('register'),
+        //     [
+        //         'name' => 'hassan2',
+        //         'email' => 'hassan2@gmail.com',
+        //         'password' => '123456789',
+        //         'password_confirmation' => '123456789',
+        //     ]);
 
-        $user = factory(User::class)->create();
-        $this->actingAs($user)->post(route('post.store'),
-        [
-            'title' => 'test100000',
-            'user_id' => $user->id,
-        ]);
+        //     $this->assertDatabaseHas('users', [
+        //         'name' => 'hassan2',
+        //         'email' => 'hassan2@gmail.com',
+        //     ]);
 
-        $this->assertDatabaseHas('posts',[
-            'title' => 'test100000',
-            'user_id' => $user->id,
-        ]);
-     }
+        // }
+
+
+        public function test_users_can_login(){
+
+            $user = factory(User::class)->create([
+                'password' => Hash::make('123456789')
+            ]);
+            $this->post(route('login'),
+            [
+                'email' => $user->email,
+                'password' => '123456789'
+            ]);
+
+            $this->assertTrue(auth()->check());
+            $this->assertTrue($user->is(auth()->user()));
+
+
+        }
+
 
 
 }
