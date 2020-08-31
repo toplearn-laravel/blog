@@ -31,6 +31,8 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
 
 Route::resource('post', 'PostController');
+Route::get('/refueling', 'CarController@calc');
+
 
 
 
