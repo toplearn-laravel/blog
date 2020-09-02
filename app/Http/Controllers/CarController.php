@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Additions\FuelType;
 use App\Service\FuelConsumption;
+use App\Service\FuelControl;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -16,9 +17,9 @@ class CarController extends Controller
     //     dd($fuelConsumption->refuling(50));
     // }
 
-    public function calc(FuelConsumption $fuelConsumption, FuelType $fuelType){
+    public function calc(FuelControl $fuelControl, FuelType $fuelType){
         $fuelType = $fuelType->premium();
-        dd($fuelConsumption->refuling(50));
+        dd($fuelControl->refueling(50));
 
     }
 

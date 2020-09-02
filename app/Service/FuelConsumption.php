@@ -3,7 +3,7 @@
 namespace App\Service;
 
 
-class FuelConsumption{
+class FuelConsumption implements FuelControl{
 
     private $model;
     private $extra;
@@ -14,7 +14,7 @@ class FuelConsumption{
         $this->extra = 0;
     }
 
-    public function refuling($liter){
+    public function refueling($liter){
 
         return[
             'distance' => $liter * 10 + $this->extra,

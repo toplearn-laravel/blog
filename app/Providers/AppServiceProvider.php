@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Service\FuelConsumption;
+use App\Service\FuelControl;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(FuelConsumption::class, function(){
+        $this->app->singleton(FuelControl::class, function(){
             return new FuelConsumption('BMW');
         });
     }
