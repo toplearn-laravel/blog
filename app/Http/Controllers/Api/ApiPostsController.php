@@ -50,7 +50,7 @@ class ApiPostsController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::findOrfail($id);
-        $post->update($request->only(['title', 'api2']));
+        $post->update($request->only(['title']));
     }
 
     /**
