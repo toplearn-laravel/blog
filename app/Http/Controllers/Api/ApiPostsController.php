@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Http\Resources\Post as PostResource;
+use App\Http\Resources\PostCollection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -17,10 +19,9 @@ class ApiPostsController extends Controller
      */
     public function index(Request $request)
     {
-    //    return Post::paginate(10);
-        // $sortColumn = $request->input('sort', 'id');
-        // $sortDirection = Str::startsWith($sortColumn, '-') ? 'desc' : 'asc';
-        // $sortColumn = ltrim($sortColumn, '-');
+
+        return new PostCollection(Post::all());
+        // return Post::find(78);
 
     }
 
