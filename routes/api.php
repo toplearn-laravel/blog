@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::fallback(function () {
+    return response()->json([
+        'msg' => 'Route Not Found',
+    ],404);
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -19,7 +19,11 @@ class Post extends JsonResource
        return [
            'id' => $this->id,
            'title' => $this->title,
-           'comments' => CommentResource::collection($this->comments)
+        //    'comments' => CommentResource::collection($this->whenLoaded('comments'))
+           'comments' => $this->when(
+               $request->get('include') == 'comments',
+               CommentResource::collection($this->comments)
+           )
        ];
     }
 }
