@@ -35,6 +35,22 @@ Route::post('login', function (Request $request){
 });
 
 
+Route::middleware('auth:api')->post('logout', function (Request $request){
+    if(auth()->user()){
+        $user = auth()->user();
+        $user->api_token = null;
+        $user->save();
+        return response()->json([
+            'msg' => 'thank you for using this application'
+        ]);
+    }
+    return response()->json([
+        'error' => 'unable to logout user'
+    ],401);
+
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
