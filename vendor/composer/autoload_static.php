@@ -499,6 +499,7 @@ class ComposerStaticInit1078539fe61de0166ded115dd1187d1a
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+        'App\\Http\\Controllers\\api\\ApiUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ApiUserController.php',
         'App\\Http\\Controllers\\api\\auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/auth/LoginController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
