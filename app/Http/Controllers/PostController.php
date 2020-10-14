@@ -7,6 +7,7 @@ use App\Post;
 use App\Rules\Uppercase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -18,7 +19,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
 
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'DESC')->get();
       return view('post.index', compact('posts'));
     }
 
@@ -42,8 +43,16 @@ class PostController extends Controller
     public function store(StorePost $request)
     {
 
-            Post::create($request->all());
-            return redirect()->route('post.index')->with('success', 'record created successfully');
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+        $pdf = Storage::putFileAs('pdf', $request->file('pdf'), time().'.'.$request->file('pdf')->getClientOriginalName());
+         Post::create([
+             'title' => $request->title,
+             'user_id' => $request->user_id,
+             'image' => 'images/'.$imageName,
+             'pdf' => $pdf
+         ]);
+        return redirect()->route('post.index')->with('success', 'record created successfully');
     }
 
     /**
@@ -55,6 +64,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
 
+        if($post->pdf != null)
+        return Storage::download($post->pdf);
         return view('post.show', compact('post'));
 
     }
