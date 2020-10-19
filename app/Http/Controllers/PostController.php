@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePost;
 use App\Post;
 use App\Rules\Uppercase;
+use App\Jobs\ProcessPost;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StorePost;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -45,13 +46,16 @@ class PostController extends Controller
 
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
-        $pdf = Storage::putFileAs('pdf', $request->file('pdf'), time().'.'.$request->file('pdf')->getClientOriginalName());
-         Post::create([
+        // $pdf = Storage::putFileAs('pdf', $request->file('pdf'), time().'.'.$request->file('pdf')->getClientOriginalName());
+       $post = Post::create([
              'title' => $request->title,
              'user_id' => $request->user_id,
              'image' => 'images/'.$imageName,
-             'pdf' => $pdf
+            //  'pdf' => $pdf
          ]);
+        //  ProcessPost::dispatch($post)->delay(now()->addMinutes(1));
+         ProcessPost::dispatchNow($post);
+
         return redirect()->route('post.index')->with('success', 'record created successfully');
     }
 

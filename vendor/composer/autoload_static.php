@@ -516,6 +516,7 @@ class ComposerStaticInit1078539fe61de0166ded115dd1187d1a
         'App\\Http\\Resources\\CommentCollection' => __DIR__ . '/../..' . '/app/Http/Resources/CommentCollection.php',
         'App\\Http\\Resources\\Post' => __DIR__ . '/../..' . '/app/Http/Resources/Post.php',
         'App\\Http\\Resources\\PostCollection' => __DIR__ . '/../..' . '/app/Http/Resources/PostCollection.php',
+        'App\\Jobs\\ProcessPost' => __DIR__ . '/../..' . '/app/Jobs/ProcessPost.php',
         'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

@@ -42,6 +42,7 @@ return array(
     'App\\Http\\Resources\\CommentCollection' => $baseDir . '/app/Http/Resources/CommentCollection.php',
     'App\\Http\\Resources\\Post' => $baseDir . '/app/Http/Resources/Post.php',
     'App\\Http\\Resources\\PostCollection' => $baseDir . '/app/Http/Resources/PostCollection.php',
+    'App\\Jobs\\ProcessPost' => $baseDir . '/app/Jobs/ProcessPost.php',
     'App\\Post' => $baseDir . '/app/Post.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
