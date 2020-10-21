@@ -31,6 +31,12 @@ class ProcessPost implements ShouldQueue
      */
     public function handle()
     {
-       Log::info($this->post);
+       Lowg::info($this->post);
+    }
+
+    public function failed(){
+
+        Log::emergency('failed');
+
     }
 }

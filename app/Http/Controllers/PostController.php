@@ -53,8 +53,8 @@ class PostController extends Controller
              'image' => 'images/'.$imageName,
             //  'pdf' => $pdf
          ]);
-        //  ProcessPost::dispatch($post)->delay(now()->addMinutes(1));
-         ProcessPost::dispatchNow($post);
+         ProcessPost::dispatch($post);
+        //  ProcessPost::dispatchNow($post);
 
         return redirect()->route('post.index')->with('success', 'record created successfully');
     }
